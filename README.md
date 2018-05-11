@@ -1,4 +1,4 @@
-# HarapeCoin
+# ERC20 Tokens Example
 
 ### Install node modules
 ```
