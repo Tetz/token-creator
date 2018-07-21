@@ -12,6 +12,9 @@ var ropstenPrivateKey = new Buffer(process.env["ROPSTEN_PRIVATE_KEY"], "hex")
 var ropstenWallet = Wallet.fromPrivateKey(ropstenPrivateKey);
 var ropstenProvider = new WalletProvider(ropstenWallet, "https://ropsten.infura.io/");
 
+var rinkebyPrivateKey = new Buffer(process.env["RINKEBY_PRIVATE_KEY"], "hex")
+var rinkebyWallet = Wallet.fromPrivateKey(rinkebyPrivateKey);
+var rinkebyProvider = new WalletProvider(rinkebyWallet, "https://rinkeby.infura.io/");
 
 module.exports = {
   networks: {
@@ -26,6 +29,12 @@ module.exports = {
       // truffle deploy --network rinkeby
       // truffle(rinkeby)> web3.eth.getBlock("pending", (error, result) =>
       //   console.log(result.gasLimit))
+      gas: 4600000,
+      gasPrice: web3.toWei("20", "gwei"),
+      network_id: "3",
+    },
+    rinkeby: {
+      provider: rinkebyProvider,
       gas: 4600000,
       gasPrice: web3.toWei("20", "gwei"),
       network_id: "3",
