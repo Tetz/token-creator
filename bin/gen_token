@@ -1,0 +1,5 @@
+#!/bin/sh
+rm -rf build/contracts/*.json
+truffle compile
+truffle deploy --network rinkeby
+
