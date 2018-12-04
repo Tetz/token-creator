@@ -15,5 +15,5 @@ MAINNET_PRIVATE_KEY="paste your key"
 ### Build and Deploy to TestNet
 ```
 truffle compile
-truffle deploy --network ropsten
+truffle deploy --network rinkeby
 ```
