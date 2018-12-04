@@ -1,7 +1,7 @@
 {
-  "name": "samplecoin",
+  "name": "token-deploy",
   "version": "1.0.0",
-  "description": "",
+  "description": "Issue your own erc20 tokens.",
   "main": "truffle.js",
   "directories": {
     "test": "test"
@@ -9,14 +9,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Tetsuro Takemoto",
   "license": "ISC",
-  "dependencies": {
-    "zeppelin-solidity": "^1.12.0"
-  },
   "devDependencies": {
-    "dotenv": "^5.0.1",
-    "ethereumjs-wallet": "^0.6.0",
-    "truffle-wallet-provider": "0.0.5"
+    "dotenv": "^5.0.1"
+  },
+  "dependencies": {
+    "openzeppelin-solidity": "^2.0.0",
+    "truffle-hdwallet-provider": "^1.0.0-web3one.1"
   }
 }

@@ -1,49 +1,36 @@
-require('dotenv').config();
-const Web3 = require("web3");
-const web3 = new Web3();
-const WalletProvider = require("truffle-wallet-provider");
-const Wallet = require('ethereumjs-wallet');
-
-var mainNetPrivateKey = new Buffer(process.env["MAINNET_PRIVATE_KEY"], "hex")
-var mainNetWallet = Wallet.fromPrivateKey(mainNetPrivateKey);
-var mainNetProvider = new WalletProvider(mainNetWallet, "https://mainnet.infura.io/");
-
-var ropstenPrivateKey = new Buffer(process.env["ROPSTEN_PRIVATE_KEY"], "hex")
-var ropstenWallet = Wallet.fromPrivateKey(ropstenPrivateKey);
-var ropstenProvider = new WalletProvider(ropstenWallet, "https://ropsten.infura.io/");
-
-var rinkebyPrivateKey = new Buffer(process.env["RINKEBY_PRIVATE_KEY"], "hex")
-var rinkebyWallet = Wallet.fromPrivateKey(rinkebyPrivateKey);
-var rinkebyProvider = new WalletProvider(rinkebyWallet, "https://rinkeby.infura.io/");
+require('dotenv').config()
+const HDWalletProvider = require("truffle-hdwallet-provider")
 
 module.exports = {
   networks: {
     development: {
       host: "localhost",
       port: 8545,
-      network_id: "*" // Match any network id
-    },
-    ropsten: {
-      provider: ropstenProvider,
-      // You can get the current gasLimit by running
-      // truffle deploy --network rinkeby
-      // truffle(rinkeby)> web3.eth.getBlock("pending", (error, result) =>
-      //   console.log(result.gasLimit))
-      gas: 4600000,
-      gasPrice: web3.toWei("20", "gwei"),
-      network_id: "3",
+      network_id: "*"
     },
     rinkeby: {
-      provider: rinkebyProvider,
-      gas: 4600000,
-      gasPrice: web3.toWei("20", "gwei"),
-      network_id: "3",
+      provider: () => {
+        return new HDWalletProvider(
+          process.env['RINKEBY_MNEMONIC'], 'https://rinkeby.infura.io/xyji23ngACpAtbvoO0MZ'
+        )
+      },
+      network_id: 4
+    },
+    ropsten: {
+      provider: () => {
+        return new HDWalletProvider(
+          process.env['ROPSTEN_MNEMONIC'], 'https://ropsten.infura.io/xyji23ngACpAtbvoO0MZ'
+        )
+      },
+      network_id: 3
     },
     mainnet: {
-      provider: mainNetProvider,
-      gas: 4600000,
-      gasPrice: web3.toWei("20", "gwei"),
-      network_id: "1",
+      provider: () => {
+        return new HDWalletProvider(
+          process.env['MAINNET_MNEMONIC'], 'https://mainnet.infura.io/xyji23ngACpAtbvoO0MZ'
+        )
+      },
+      network_id: 1
     }
   }
-};
+}
