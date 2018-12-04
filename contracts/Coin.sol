@@ -1,13 +1,13 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.24;
 import "../node_modules/zeppelin-solidity/contracts/token/ERC20/StandardToken.sol";
 
 contract Coin is StandardToken {
-  string public name = "Test Coin";
-  string public symbol = "TSC";
-  uint public decimals = 18;
-  uint public INITIAL_SUPPLY = 100000000000 * (10 ** decimals);
+  string public name = "Cat Coin";
+  string public symbol = "CAT";
+  uint public decimals = 8;
+  uint public INITIAL_SUPPLY = 555555 * (10 ** decimals);
 
-  function Coin() public {
+  constructor() public {
     totalSupply_ = INITIAL_SUPPLY;
     balances[msg.sender] = INITIAL_SUPPLY;
   }
