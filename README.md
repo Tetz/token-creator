@@ -1,4 +1,4 @@
-# ERC20 Tokens Example
+# The Token Creator
 
 ### Install node modules
 ```
