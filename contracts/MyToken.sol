@@ -1,15 +1,9 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.6.0;
 
-import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract MyToken is ERC20 {
-  string public name = "Sample Coin";
-  string public symbol = "SMPC";
-  uint8 public decimals = 8;
-  uint public INITIAL_SUPPLY = 8000000 * 100000000;
-
-  constructor() public {
-    _mint(msg.sender, INITIAL_SUPPLY);
+  constructor() public ERC20("Test Coin", "TCN") {
+    _mint(msg.sender, 5000 * 10 ** uint256(18));
   }
-
 }
