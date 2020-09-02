@@ -1,5 +1,5 @@
 {
-  "name": "token-deploy",
+  "name": "token-creator",
   "version": "1.0.0",
   "description": "Issue your own erc20 tokens.",
   "main": "truffle.js",
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tetsuro Takemoto",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "dotenv": "^5.0.1"
   },
