@@ -1,7 +1,7 @@
 {
   "name": "token-creator",
   "version": "1.0.0",
-  "description": "Issue your own erc20 tokens.",
+  "description": "Issue your erc20 tokens.",
   "main": "truffle.js",
   "directories": {
     "test": "test"
@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^3.1.0",
-    "truffle-hdwallet-provider": "^1.0.0-web3one.1"
+    "@truffle/hdwallet-provider": "^1.0.44"
   }
 }
