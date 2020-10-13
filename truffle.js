@@ -19,7 +19,9 @@ module.exports = {
           process.env['RINKEBY_MNEMONIC'], 'https://rinkeby.infura.io/v3/a3e73419953548babeebc5a327f62f56'
         )
       },
-      network_id: 4
+      network_id: 4,
+      gas: 10000000,
+      gasPrice: 20000000000
     },
     ropsten: {
       provider: () => {
@@ -35,7 +37,9 @@ module.exports = {
           process.env['MAINNET_MNEMONIC'], 'https://mainnet.infura.io/v3/a3e73419953548babeebc5a327f62f56'
         )
       },
-      network_id: 1
+      network_id: 1,
+      gas: 10000000,
+      gasPrice: 20000000000
     }
   }
 }
