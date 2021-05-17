@@ -22,3 +22,9 @@ Or just run
 ```
 ./bin/gen_token
 ```
+
+### Mint tokens
+```
+truffle console --network rinkeby
+myToken.mint("YOUR_ADDRESS", "100000000000000000000")
+```
