@@ -6,7 +6,7 @@ npm install
 ```
 
 ### Set environment variables
-vim .env
+Create `.env` file and add your mnemonic.
 ```
 MAINNET_MNEMONIC="aquaman superman batman shazam flash wonderwoman ..."
 RINKEBY_MNEMONIC="aquaman superman batman shazam flash wonderwoman ..."
@@ -24,7 +24,14 @@ Or just run
 ```
 
 ### Mint tokens
+
+Open console
 ```
 truffle console --network rinkeby
+```
+
+And run
+```
+myToken = await MyToken.deployed()
 myToken.mint("YOUR_ADDRESS", "100000000000000000000")
 ```
